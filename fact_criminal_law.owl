@@ -1,0 +1,712 @@
+<!-- file ontology có fact, dùng file này để suy luận -->
+
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/criminal-law.owl"
+         xmlns="http://example.org/criminal-law.owl#">
+
+<owl:Ontology rdf:about="http://example.org/criminal-law.owl"/>
+
+<owl:ObjectProperty rdf:about="#commits">
+  <rdfs:domain rdf:resource="#Offender"/>
+  <rdfs:range rdf:resource="#Crime"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isVictimOf">
+  <rdfs:domain rdf:resource="#Victim"/>
+  <rdfs:range rdf:resource="#Crime"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPunishedBy">
+  <rdfs:domain rdf:resource="#Offender"/>
+  <rdfs:range rdf:resource="#Punishment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#definedIn">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#LegalProvision"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#judgedBy">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Court"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#partOfCase">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#CriminalCase"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasEvidence">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Evidence"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#witnessedBy">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Witness"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#representedBy">
+  <rdfs:domain rdf:resource="#Offender"/>
+  <rdfs:range rdf:resource="#Lawyer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#prosecutedBy">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Prosecutor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#investigatedBy">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#PoliceOfficer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#judgedInTrial">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Trial"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#occurredAt">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSentence">
+  <rdfs:domain rdf:resource="#Offender"/>
+  <rdfs:range rdf:resource="#Sentence"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSeverity">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#CrimeSeverity"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasIntent">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Intent"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Evidence"/>
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:domain rdf:resource="#Court"/>
+  <rdfs:domain rdf:resource="#LegalProvision"/>
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:domain rdf:resource="#Trial"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:domain rdf:resource="#Sentence"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasAge">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasGender">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#sentenceLength">
+  <rdfs:domain rdf:resource="#Imprisonment"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#fineAmount">
+  <rdfs:domain rdf:resource="#Fine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#occurredOnDate">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:domain rdf:resource="#Trial"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Offender">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Crime">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Victim">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Punishment">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalProvision">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Court">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CriminalCase">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Evidence">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Witness">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Lawyer">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Prosecutor">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PoliceOfficer">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Trial">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sentence">
+  <rdfs:subClassOf rdf:resource="#Punishment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrimeSeverity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Intent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Imprisonment">
+  <rdfs:subClassOf rdf:resource="#Punishment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fine">
+  <rdfs:subClassOf rdf:resource="#Punishment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Judge">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DefenseAttorney">
+  <rdfs:subClassOf rdf:resource="#Lawyer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Time">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Date">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TimePeriod">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PenalCodeArticle">
+  <rdfs:subClassOf rdf:resource="#LegalProvision"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ViolentCrime">
+  <rdfs:subClassOf rdf:resource="#Crime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Murder">
+  <rdfs:subClassOf rdf:resource="#ViolentCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Assault">
+  <rdfs:subClassOf rdf:resource="#ViolentCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PropertyCrime">
+  <rdfs:subClassOf rdf:resource="#Crime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Theft">
+  <rdfs:subClassOf rdf:resource="#PropertyCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robbery">
+  <rdfs:subClassOf rdf:resource="#PropertyCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EconomicCrime">
+  <rdfs:subClassOf rdf:resource="#Crime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fraud">
+  <rdfs:subClassOf rdf:resource="#EconomicCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Corruption">
+  <rdfs:subClassOf rdf:resource="#EconomicCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DeathPenalty">
+  <rdfs:subClassOf rdf:resource="#Punishment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Probation">
+  <rdfs:subClassOf rdf:resource="#Punishment"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Article152">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 152. Tội đánh tráo người dưới 01 tuổi</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BabySwap">
+  <rdf:type rdf:resource="#Crime"/>
+  <definedIn rdf:resource="#Article152"/>
+  <isPunishedBy rdf:resource="#Imprisonment_2_5"/>
+  <isPunishedBy rdf:resource="#Imprisonment_3_7"/>
+  <isPunishedBy rdf:resource="#Imprisonment_7_12"/>
+  <isPunishedBy rdf:resource="#Fine_10_50"/>
+  <hasSeverity rdf:resource="#Severe"/>
+  <hasIntent rdf:resource="#DeliberateIntent"/>
+  <hasIntent rdf:resource="#Organized"/>
+  <hasIntent rdf:resource="#AbuseTrust"/>
+  <hasIntent rdf:resource="#RepeatOffense"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đánh tráo người dưới 01 tuổi</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imprisonment_2_5">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù 2-5 năm</hasName>
+  <sentenceLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sentenceLength>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imprisonment_3_7">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <sentenceLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</sentenceLength>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù 3-7 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imprisonment_7_12">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù 7-12 năm (tái phạm nguy hiểm hoặc tính chất chuyên nghiệp)</hasName>
+  <sentenceLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</sentenceLength>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fine_10_50">
+  <rdf:type rdf:resource="#Fine"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tiền 10-50 triệu</hasName>
+  <fineAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000000</fineAmount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Severe">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nghiêm trọng</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DeliberateIntent">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cố ý</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Organized">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Có tổ chức</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AbuseTrust">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lợi dụng chức vụ, quyền hạn, nghề nghiệp</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RepeatOffense">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạm tội 02 lần trở lên</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Article153">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 153. Tội chiếm đoạt người dưới 16 tuổi</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ChildAbduction">
+  <rdf:type rdf:resource="#Crime"/>
+  <definedIn rdf:resource="#Article153"/>
+  <isPunishedBy rdf:resource="#Imprisonment_3_7"/>
+  <isPunishedBy rdf:resource="#Imprisonment_5_10"/>
+  <isPunishedBy rdf:resource="#Imprisonment_10_15"/>
+  <isPunishedBy rdf:resource="#Fine_10_50_Article153"/>
+  <hasSeverity rdf:resource="#Severe"/>
+  <hasIntent rdf:resource="#DeliberateIntent"/>
+  <hasIntent rdf:resource="#Organized"/>
+  <hasIntent rdf:resource="#AbuseTrust"/>
+  <hasIntent rdf:resource="#CareResponsibility"/>
+  <hasIntent rdf:resource="#MultipleVictims"/>
+  <hasIntent rdf:resource="#RepeatOffense"/>
+  <hasIntent rdf:resource="#MentalDisorder11_45"/>
+  <hasIntent rdf:resource="#SeriousInjury31"/>
+  <hasIntent rdf:resource="#Professional"/>
+  <hasIntent rdf:resource="#MultipleVictims6"/>
+  <hasIntent rdf:resource="#MentalDisorder46"/>
+  <hasIntent rdf:resource="#VictimDeath"/>
+  <hasIntent rdf:resource="#DangerousRepeat"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chiếm đoạt người dưới 16 tuổi</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imprisonment_5_10">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù 5-10 năm (tình tiết tăng nặng)</hasName>
+  <sentenceLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</sentenceLength>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imprisonment_10_15">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù 10-15 năm (tình tiết nghiêm trọng)</hasName>
+  <sentenceLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sentenceLength>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fine_10_50_Article153">
+  <rdf:type rdf:resource="#Fine"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tiền 10-50 triệu</hasName>
+  <fineAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000000</fineAmount>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CareResponsibility">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với người mà mình có trách nhiệm chăm sóc, nuôi dưỡng</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MultipleVictims">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với từ 02 người đến 05 người</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MentalDisorder11_45">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gây rối loạn tâm thần và hành vi 11%-45%</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SeriousInjury31">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gây thương tích &gt;= 31%</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Professional">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Có tính chất chuyên nghiệp</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MultipleVictims6">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với 06 người trở lên</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#MentalDisorder46">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gây rối loạn tâm thần và hành vi &gt;= 46%</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#VictimDeath">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Làm nạn nhân chết</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DangerousRepeat">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tái phạm nguy hiểm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penalcodearticle1">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 157. Tội bắt, giữ hoặc giam người trái pháp luật</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crime1">
+  <rdf:type rdf:resource="#Crime"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tội bắt, giữ hoặc giam người trái pháp luật</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#probation1">
+  <rdf:type rdf:resource="#Probation"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cải tạo không giam giữ đến 03 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment1">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 06 tháng đến 03 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment2">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 02 năm đến 07 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment3">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 05 năm đến 12 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity1">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng từ 06 tháng đến 03 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity2">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng từ 02 năm đến 07 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity3">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng từ 05 năm đến 12 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent1">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạm tội có tổ chức</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent2">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lợi dụng chức vụ, quyền hạn</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent3">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với người thi hành công vụ</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent4">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạm tội 02 lần trở lên</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent5">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với 02 người trở lên</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent6">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Đối với người dưới 18 tuổi, phụ nữ mà biết là có thai, người già yếu hoặc người không có khả năng tự vệ</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent7">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Làm gia đình người bị giam lâm vào tình trạng khó khăn, quẫn bách</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent8">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gây rối loạn tâm thần từ 11% đến 45%</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent9">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gây rối loạn tâm thần 46% trở lên</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent10">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tra tấn, đối xử tàn bạo, vô nhân đạo hoặc hạ nhục phẩm giá nạn nhân</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent11">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Làm người bị bắt chết hoặc tự sát</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent12">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penalcodearticle2">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 158. Tội xâm phạm chỗ ở của người khác</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#propertycrime1">
+  <rdf:type rdf:resource="#PropertyCrime"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tội xâm phạm chỗ ở của người khác</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#probation2">
+  <rdf:type rdf:resource="#Probation"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cải tạo không giam giữ đến 02 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment4">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 03 tháng đến 02 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity4">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng thông thường</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent13">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ý định phạm tội xâm phạm chỗ ở</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent14">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tình tiết tăng nặng trong tội xâm phạm chỗ ở</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penalcodearticle3">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 159. Tội xâm phạm bí mật hoặc an toàn thư tín, điện thoại, điện tín hoặc hình thức trao đổi thông tin riêng tư khác của người khác</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crime2">
+  <rdf:type rdf:resource="#Crime"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xâm phạm bí mật hoặc an toàn thư tín, điện thoại, điện tín hoặc hình thức trao đổi thông tin riêng tư khác</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment5">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt cảnh cáo</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fine1">
+  <rdf:type rdf:resource="#Fine"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tiền từ 20.000.000 đồng đến 50.000.000 đồng</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#probation3">
+  <rdf:type rdf:resource="#Probation"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt cải tạo không giam giữ đến 03 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity5">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng của tội xâm phạm bí mật</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent15">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ý định phạm tội xâm phạm bí mật</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent16">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tình tiết tăng nặng: Có tổ chức; Lợi dụng chức vụ, quyền hạn; Phạm tội 02 lần trở lên; Tiết lộ thông tin làm ảnh hưởng đến danh dự, uy tín, nhân phẩm; Làm nạn nhân tự sát.</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penalcodearticle4">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 168. Tội cướp tài sản</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robbery1">
+  <rdf:type rdf:resource="#Robbery"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cướp tài sản</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment6">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 03 năm đến 10 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment7">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 07 năm đến 15 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment8">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 12 năm đến 20 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment9">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 18 năm đến 20 năm hoặc tù chung thân</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment10">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 01 năm đến 05 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#fine2">
+  <rdf:type rdf:resource="#Fine"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity6">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mức độ nghiêm trọng cao</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intent17">
+  <rdf:type rdf:resource="#Intent"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ý định phạm tội</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#penalcodearticle5">
+  <rdf:type rdf:resource="#PenalCodeArticle"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Điều 161. Tội làm sai lệch kết quả bầu cử, kết quả trưng cầu ý dân</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crime3">
+  <rdf:type rdf:resource="#Crime"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tội làm sai lệch kết quả bầu cử, kết quả trưng cầu ý dân</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#probation4">
+  <rdf:type rdf:resource="#Probation"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt cải tạo không giam giữ đến 02 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment11">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 03 tháng đến 02 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment12">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 01 năm đến 03 năm</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imprisonment13">
+  <rdf:type rdf:resource="#Imprisonment"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phạt tù từ 01 năm đến 05 năm - cấm đảm nhiệm chức vụ</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity7">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tội phạm nhẹ</hasName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#crimeseverity8">
+  <rdf:type rdf:resource="#CrimeSeverity"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tội phạm vừa</hasName>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
