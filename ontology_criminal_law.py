@@ -49,6 +49,8 @@ with onto:
     class Intent(Thing): pass # lớp tâm lý phạm tội (cố ý, vô ý, mưu mô, hoặc lừa đảo.)
     class Organized(Intent):pass # có tổ chức
 
+    class Condition(Thing): pass # lớp tạo ra tội phạm
+
     class Punishment(Thing): pass # lớp hình phạt
     class Imprisonment(Punishment): pass # tù giam
     class Fine(Punishment): pass # phạt tiền
@@ -72,6 +74,14 @@ with onto:
     class definedIn(ObjectProperty): # tội danh này được quy định trong điều luật nào
         domain = [Crime]
         range = [LegalProvision]
+
+    class appliesTo(ObjectProperty): # điều luật này áp dụng cho tội danh nào
+        domain = [LegalProvision]
+        range = [Crime]
+
+    class hasCondition(ObjectProperty): # tội phạm có điều kiện nào
+        domain = [Crime]
+        range = [Condition]
 
     class judgedBy(ObjectProperty): # tội phạm được xét xử ở toà nào
         domain = [Crime]

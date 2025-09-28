@@ -1,0 +1,1173 @@
+@prefix ns1: <http://example.org/criminal-law.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Article13 a ns1:LegalProvision ;
+    ns1:hasText "Điều 13. Phạm tội do dùng rượu, bia hoặc chất kích thích mạnh khác. Người phạm tội trong tình trạng mất khả năng nhận thức hoặc khả năng điều khiển hành vi của mình do dùng rượu, bia hoặc chất kích thích mạnh khác, thì vẫn phải chịu trách nhiệm hình sự."^^xsd:string .
+
+ns1:Crime_DrunkOffense a ns1:Crime ;
+    ns1:definedIn ns1:Article13 ;
+    ns1:hasCondition ns1:Condition_LossOfControl ;
+    ns1:isPunishedBy ns1:Punishment_CriminalResponsibility .
+
+ns1:Condition_LossOfControl a ns1:Condition .
+
+ns1:Punishment_CriminalResponsibility a ns1:Punishment .
+
+
+ns1:Article157 a ns1:LegalProvision ;
+    ns1:hasText "Điều 157. Tội bắt, giữ hoặc giam người trái pháp luật" .
+
+ns1:Crime_BatGiamNguoiTraiPhapLuat a ns1:Crime ;
+    ns1:definedIn ns1:Article157 ;
+    ns1:hasCondition ns1:Condition_KhongThuocTruongHop ;
+    ns1:isPunishedBy ns1:Punishment_CaiTaoKhongGiamGiữ_03Nam ;
+    ns1:isPunishedBy ns1:Punishment_Tu_06ThangDen_03Nam .
+
+ns1:Condition_KhongThuocTruongHop a ns1:Condition .
+
+ns1:Punishment_CaiTaoKhongGiamGiữ_03Nam a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm" .
+
+ns1:Punishment_Tu_06ThangDen_03Nam a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 06 tháng đến 03 năm" .
+
+ns1:Condition_CoToChuc a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_LoiDungChucVu a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_DoiTuongThiHanhCongVu a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_PhamToi_2LanTroLen a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_DoiTuong_2NguoiTroLen a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_DoiTuongDuoi_18 a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_GiaDinhKhongKhan a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Condition_GayRoiLoanTamThan a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_02Den_07Nam .
+
+ns1:Punishment_Tu_02Den_07Nam a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 02 năm đến 07 năm" .
+
+ns1:Punishment_Tu_05Den_12Nam a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 05 năm đến 12 năm" .
+
+ns1:Condition_LamCheTieu a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_05Den_12Nam .
+
+ns1:Condition_TraTan a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_05Den_12Nam .
+
+ns1:Condition_GayRoiLoanTamThan_46 a ns1:Condition ;
+    ns1:isPunishedBy ns1:Punishment_Tu_05Den_12Nam .
+
+ns1:Punishment_CamDamNhiemChucVu a ns1:Punishment ;
+    ns1:hasText "Cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm" .
+
+
+ns1:Article158 a ns1:LegalProvision ;
+    ns1:hasText "Điều 158. Tội xâm phạm chỗ ở của người khác"^^xsd:string .
+
+ns1:Crime_InvasionOfResidence a ns1:Crime ;
+    ns1:definedIn ns1:Article158 ;
+    ns1:hasCondition ns1:Condition_IllegalSearch ;
+    ns1:hasCondition ns1:Condition_UseOfForce ;
+    ns1:hasCondition ns1:Condition_IllegalOccupation ;
+    ns1:hasCondition ns1:Condition_UnauthorizedEntry ;
+    ns1:isPunishedBy ns1:Punishment_CommunityService ; 
+    ns1:isPunishedBy ns1:Punishment_Prison .
+
+ns1:Condition_IllegalSearch a ns1:Condition ;
+    ns1:hasText "Khám xét trái pháp luật chỗ ở của người khác"^^xsd:string .
+
+ns1:Condition_UseOfForce a ns1:Condition ;
+    ns1:hasText "Dùng vũ lực, đe dọa dùng vũ lực, gây sức ép về tinh thần hoặc thủ đoạn trái pháp luật khác buộc người khác phải rời khỏi chỗ ở hợp pháp của họ"^^xsd:string .
+
+ns1:Condition_IllegalOccupation a ns1:Condition ;
+    ns1:hasText "Dùng mọi thủ đoạn trái pháp luật nhằm chiếm, giữ chỗ ở hoặc cản trở trái phép, không cho người đang ở hoặc quản lý hợp pháp chỗ ở được vào chỗ ở của họ"^^xsd:string .
+
+ns1:Condition_UnauthorizedEntry a ns1:Condition ;
+    ns1:hasText "Tự ý xâm nhập chỗ ở của người khác mà không được sự đồng ý của chủ nhà hoặc người quản lý hợp pháp"^^xsd:string .
+
+ns1:Punishment_CommunityService a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 02 năm"^^xsd:string .
+
+ns1:Punishment_Prison a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 03 tháng đến 02 năm"^^xsd:string . 
+
+ns1:Condition_SevereCircumstances a ns1:Condition ;
+    ns1:hasText "Có tổ chức; Lợi dụng chức vụ, quyền hạn; Phạm tội 02 lần trở lên; Làm người bị xâm phạm chỗ ở tự sát; Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội"^^xsd:string . 
+
+ns1:Punishment_SeverePrison a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 05 năm"^^xsd:string . 
+
+ns1:Crime_InvasionOfResidence_Severe a ns1:Crime ;
+    ns1:definedIn ns1:Article158 ;
+    ns1:hasCondition ns1:Condition_SevereCircumstances ;
+    ns1:isPunishedBy ns1:Punishment_SeverePrison . 
+
+ns1:Condition_Prohibition a ns1:Condition ;
+    ns1:hasText "Cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm"^^xsd:string . 
+
+ns1:Crime_InvasionOfResidence_Prohibition a ns1:Crime ;
+    ns1:definedIn ns1:Article158 ;
+    ns1:hasCondition ns1:Condition_Prohibition ;
+    ns1:isPunishedBy ns1:Punishment_SeverePrison .
+
+
+ns1:Article159 a ns1:LegalProvision ;
+    ns1:hasText "Điều 159. Tội xâm phạm bí mật hoặc an toàn thư tín, điện thoại, điện tín hoặc hình thức trao đổi thông tin riêng tư khác của người khác" .
+
+ns1:Crime_InvasionOfPrivacy a ns1:Crime ;
+    ns1:definedIn ns1:Article159 ;
+    ns1:hasCondition ns1:Condition_ViolatingDiscipline ;
+    ns1:isPunishedBy ns1:Punishment_WarningFine .
+
+ns1:Condition_ViolatingDiscipline a ns1:Condition ;
+    ns1:hasText "Người nào thực hiện một trong các hành vi sau đây, đã bị xử lý kỷ luật hoặc xử phạt vi phạm hành chính về hành vi này mà còn vi phạm" .
+
+ns1:Punishment_WarningFine a ns1:Punishment ;
+    ns1:hasText "Bị phạt cảnh cáo, phạt tiền từ 20.000.000 đồng đến 50.000.000 đồng hoặc phạt cải tạo không giam giữ đến 03 năm" .
+
+ns1:Condition_OrganizedCrime a ns1:Condition ;
+    ns1:hasText "Có tổ chức" .
+
+ns1:Condition_AbuseOfPower a ns1:Condition ;
+    ns1:hasText "Lợi dụng chức vụ, quyền hạn" .
+
+ns1:Condition_RepeatedOffense a ns1:Condition ;
+    ns1:hasText "Phạm tội 02 lần trở lên" .
+
+ns1:Condition_InformationDisclosure a ns1:Condition ;
+    ns1:hasText "Tiết lộ các thông tin đã chiếm đoạt, làm ảnh hưởng đến danh dự, uy tín, nhân phẩm của người khác" .
+
+ns1:Condition_SuicideRisk a ns1:Condition ;
+    ns1:hasText "Làm nạn nhân tự sát" .
+
+ns1:Punishment_Imprisonment a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 03 năm" .
+
+ns1:Punishment_Fine a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 5.000.000 đồng đến 20.000.000 đồng, cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm" .
+
+
+ns1:Article168 a ns1:LegalProvision ;
+    ns1:hasText "Điều 168. Tội cướp tài sản" .
+
+ns1:Crime_Robbery a ns1:Crime ;
+    ns1:definedIn ns1:Article168 ;
+    ns1:hasCondition ns1:Condition_UseViolence ;
+    ns1:isPunishedBy ns1:Punishment_3to10Years .
+
+ns1:Condition_UseViolence a ns1:Condition ;
+    ns1:hasText "Người nào dùng vũ lực, đe dọa dùng vũ lực ngay tức khắc hoặc có hành vi khác làm cho người bị tấn công lâm vào tình trạng không thể chống cự được nhằm chiếm đoạt tài sản." .
+
+ns1:Punishment_3to10Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 03 năm đến 10 năm." .
+
+ns1:Condition_Organized a ns1:Condition ;
+    ns1:hasText "Có tổ chức." .
+
+ns1:Condition_Professional a ns1:Condition ;
+    ns1:hasText "Có tính chất chuyên nghiệp." .
+
+ns1:Condition_Injury11to30 a ns1:Condition ;
+    ns1:hasText "Gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30%." .
+
+ns1:Condition_UseWeapon a ns1:Condition ;
+    ns1:hasText "Sử dụng vũ khí, phương tiện hoặc thủ đoạn nguy hiểm khác." .
+
+ns1:Condition_Value50to200 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng." .
+
+ns1:Condition_VulnerableGroups a ns1:Condition ;
+    ns1:hasText "Phạm tội đối với người dưới 16 tuổi, phụ nữ mà biết là có thai, người già yếu hoặc người không có khả năng tự vệ." .
+
+ns1:Condition_NegativeImpact a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội." .
+
+ns1:Condition_Reoffending a ns1:Condition ;
+    ns1:hasText "Tái phạm nguy hiểm." .
+
+ns1:Punishment_7to15Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 07 năm đến 15 năm." .
+
+ns1:Condition_Value200to500 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng." .
+
+ns1:Condition_Injury31to60 a ns1:Condition ;
+    ns1:hasText "Gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60%." .
+
+ns1:Condition_ExploitationDisaster a ns1:Condition ;
+    ns1:hasText "Lợi dụng thiên tai, dịch bệnh." .
+
+ns1:Punishment_12to20Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 12 năm đến 20 năm." .
+
+ns1:Condition_Value500Plus a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên." .
+
+ns1:Condition_Injury61Plus a ns1:Condition ;
+    ns1:hasText "Gây thương tích hoặc gây tổn hại cho sức khỏe của 01 người mà tỷ lệ tổn thương cơ thể 61% trở lên hoặc gây thương tích hoặc gây tổn hại cho sức khỏe của 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người 31% trở lên." .
+
+ns1:Condition_CausingDeath a ns1:Condition ;
+    ns1:hasText "Làm chết người." .
+
+ns1:Condition_ExploitationWar a ns1:Condition ;
+    ns1:hasText "Lợi dụng hoàn cảnh chiến tranh, tình trạng khẩn cấp." .
+
+ns1:Punishment_18to20YearsOrLife a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 18 năm đến 20 năm hoặc tù chung thân." .
+
+ns1:Punishment_1to5Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 05 năm." .
+
+ns1:Punishment_Fines a ns1:Punishment ;
+    ns1:hasText "Có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, phạt quản chế, cấm cư trú từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản." .
+
+
+ns1:Article161 a ns1:LegalProvision ;
+    ns1:hasText "Điều 161. Tội làm sai lệch kết quả bầu cử, kết quả trưng cầu ý dân"^^xsd:string .
+
+ns1:Crime_DistortingElectionResults a ns1:Crime ;
+    ns1:definedIn ns1:Article161 ;
+    ns1:hasCondition ns1:Condition_OrganizationalResponsibility ;
+    ns1:isPunishedBy ns1:Punishment_UpTo2Years .
+
+ns1:Condition_OrganizationalResponsibility a ns1:Condition ;
+    ns1:hasText "Người nào có trách nhiệm trong việc tổ chức, giám sát việc bầu cử, tổ chức trưng cầu ý dân mà giả mạo giấy tờ, gian lận phiếu hoặc dùng thủ đoạn khác để làm sai lệch kết quả bầu cử, kết quả trưng cầu ý dân."^^xsd:string .
+
+ns1:Punishment_UpTo2Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm."^^xsd:string .
+
+ns1:Condition_SevereCircumstances a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 03 năm: a) Có tổ chức; b) Dẫn đến phải tổ chức lại việc bầu cử hoặc trưng cầu ý dân."^^xsd:string .
+
+ns1:Punishment_1To3Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 03 năm."^^xsd:string .
+
+ns1:Punishment_BanFromPosition a ns1:Punishment ;
+    ns1:hasText "Người phạm tội còn có thể bị cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm."^^xsd:string .
+
+
+
+ns1:Article162 a ns1:LegalProvision ;
+    ns1:hasText "Điều 162. Tội buộc công chức, viên chức thôi việc hoặc sa thải người lao động trái pháp luật" .
+
+ns1:Crime_IllegalDismissal a ns1:Crime ;
+    ns1:definedIn ns1:Article162 ;
+    ns1:hasCondition ns1:Condition_ProfitMotive ;
+    ns1:isPunishedBy ns1:Punishment_FineOrImprisonment .
+
+ns1:Condition_ProfitMotive a ns1:Condition ;
+    ns1:hasText "Người nào vì vụ lợi hoặc động cơ cá nhân khác mà thực hiện một trong các hành vi sau đây làm cho người bị thôi việc, người bị sa thải hoặc gia đình họ lâm vào tình trạng khó khăn hoặc dẫn đến đình công." .
+
+ns1:Punishment_FineOrImprisonment a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, phạt cải tạo không giam giữ đến 01 năm hoặc phạt tù từ 03 tháng đến 01 năm." .
+
+ns1:Condition_MultipleOffenders a ns1:Condition ;
+    ns1:hasText "Đối với 02 người trở lên." .
+
+ns1:Condition_PregnantWomen a ns1:Condition ;
+    ns1:hasText "Đối với phụ nữ mà biết là có thai." .
+
+ns1:Condition_ChildCare a ns1:Condition ;
+    ns1:hasText "Đối với người đang nuôi con dưới 12 tháng tuổi." .
+
+ns1:Condition_Suicide a ns1:Condition ;
+    ns1:hasText "Làm người bị buộc thôi việc, người bị sa thải tự sát." .
+
+ns1:Punishment_HigherFineOrImprisonment a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 100.000.000 đồng đến 200.000.000 đồng hoặc phạt tù từ 01 năm đến 03 năm." .
+
+ns1:Crime_IllegalDismissal a ns1:Crime ;
+    ns1:definedIn ns1:Article162 ;
+    ns1:hasCondition ns1:Condition_MultipleOffenders ;
+    ns1:hasCondition ns1:Condition_PregnantWomen ;
+    ns1:hasCondition ns1:Condition_ChildCare ;
+    ns1:hasCondition ns1:Condition_Suicide ;
+    ns1:isPunishedBy ns1:Punishment_HigherFineOrImprisonment .
+
+ns1:Crime_ProhibitionOfPosition a ns1:Crime ;
+    ns1:definedIn ns1:Article162 ;
+    ns1:isPunishedBy ns1:Punishment_ProhibitionOfPosition .
+
+ns1:Punishment_ProhibitionOfPosition a ns1:Punishment ;
+    ns1:hasText "Bị cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm." .
+
+
+
+ns1:Article163 a ns1:LegalProvision ;
+    ns1:hasText "Điều 163. Tội xâm phạm quyền hội họp, lập hội của công dân" .
+
+ns1:Crime_InterferenceWithMeetings a ns1:Crime ;
+    ns1:definedIn ns1:Article163 ;
+    ns1:hasCondition ns1:Condition_UseOfForce ;
+    ns1:isPunishedBy ns1:Punishment_CommunityServiceOrImprisonment .
+
+ns1:Condition_UseOfForce a ns1:Condition ;
+    ns1:hasText "Người nào dùng vũ lực, đe dọa dùng vũ lực hoặc dùng thủ đoạn khác ngăn cản hoặc ép buộc người khác lập hội, hội họp hợp pháp." .
+
+ns1:Punishment_CommunityServiceOrImprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 01 năm hoặc phạt tù từ 03 tháng đến 01 năm." .
+
+ns1:Condition_OrganizedCrime a ns1:Condition ;
+    ns1:hasText "Có tổ chức." .
+
+ns1:Condition_AbuseOfPower a ns1:Condition ;
+    ns1:hasText "Lợi dụng chức vụ, quyền hạn." .
+
+ns1:Condition_RepeatedOffense a ns1:Condition ;
+    ns1:hasText "Phạm tội 02 lần trở lên." .
+
+ns1:Condition_LeadingToProtests a ns1:Condition ;
+    ns1:hasText "Dẫn đến biểu tình." .
+
+ns1:Condition_NegativeImpactOnSecurity a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội." .
+
+ns1:Punishment_ImprisonmentForSeriousOffenses a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 03 năm." .
+
+ns1:Punishment_BanOnPosition a ns1:Punishment ;
+    ns1:hasText "Cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm." .
+
+
+
+ns1:Article164 a ns1:LegalProvision ;
+    ns1:hasText "Điều 164. Tội xâm phạm quyền tự do tín ngưỡng, tôn giáo của người khác"^^xsd:string .
+
+ns1:Crime_InterferenceWithReligiousFreedom a ns1:Crime ;
+    ns1:definedIn ns1:Article164 ;
+    ns1:hasCondition ns1:Condition_UseOfForce ;
+    ns1:isPunishedBy ns1:Punishment_UpTo1Year ;
+    ns1:isPunishedBy ns1:Punishment_3To12Months .
+
+ns1:Condition_UseOfForce a ns1:Condition ;
+    ns1:hasText "Người nào dùng vũ lực, đe dọa dùng vũ lực hoặc dùng thủ đoạn khác ngăn cản hoặc ép buộc người khác thực hiện quyền tự do tín ngưỡng, tôn giáo."^^xsd:string .
+
+ns1:Punishment_UpTo1Year a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 01 năm hoặc phạt tù từ 03 tháng đến 01 năm."^^xsd:string .
+
+ns1:Punishment_3To12Months a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 03 tháng đến 01 năm."^^xsd:string .
+
+ns1:Condition_AggravatingFactors a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp: Có tổ chức; Lợi dụng chức vụ, quyền hạn; Phạm tội 02 lần trở lên; Dẫn đến biểu tình; Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội."^^xsd:string .
+
+ns1:Punishment_1To3Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 03 năm."^^xsd:string .
+
+ns1:Crime_AggravatedInterferenceWithReligiousFreedom a ns1:Crime ;
+    ns1:definedIn ns1:Article164 ;
+    ns1:hasCondition ns1:Condition_AggravatingFactors ;
+    ns1:isPunishedBy ns1:Punishment_1To3Years .
+
+
+
+ns1:Article165 a ns1:LegalProvision ;
+    ns1:hasText "Điều 165. Tội xâm phạm quyền bình đẳng giới" .
+
+ns1:Crime_GenderEqualityViolation a ns1:Crime ;
+    ns1:definedIn ns1:Article165 ;
+    ns1:hasCondition ns1:Condition_1 ;
+    ns1:isPunishedBy ns1:Punishment_WarningFine .
+
+ns1:Condition_1 a ns1:Condition ;
+    ns1:hasText "Người nào vì lý do giới mà thực hiện hành vi dưới bất kỳ hình thức nào cản trở người khác tham gia hoạt động trong các lĩnh vực chính trị, kinh tế, lao động, giáo dục và đào tạo, khoa học và công nghệ, văn hóa, thông tin, thể dục, thể thao, y tế, đã bị xử lý kỷ luật hoặc xử phạt vi phạm hành chính về hành vi này mà còn vi phạm." .
+
+ns1:Punishment_WarningFine a ns1:Punishment ;
+    ns1:hasText "Phạt cảnh cáo, phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng hoặc phạt cải tạo không giam giữ đến 02 năm." .
+
+ns1:Condition_2 a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp sau đây: Lợi dụng chức vụ, quyền hạn; Phạm tội 02 lần trở lên; Đối với 02 người trở lên." .
+
+ns1:Punishment_FineImprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt tiền từ 50.000.000 đồng đến 100.000.000 đồng hoặc phạt tù từ 03 tháng đến 02 năm." .
+
+ns1:Crime_GenderEqualityViolation_Severe a ns1:Crime ;
+    ns1:definedIn ns1:Article165 ;
+    ns1:hasCondition ns1:Condition_2 ;
+    ns1:isPunishedBy ns1:Punishment_FineImprisonment .
+
+ns1:Condition_3 a ns1:Condition ;
+    ns1:hasText "Người phạm tội còn có thể bị cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm." .
+
+ns1:Crime_GenderEqualityViolation_Restriction a ns1:Crime ;
+    ns1:definedIn ns1:Article165 ;
+    ns1:hasCondition ns1:Condition_3 ;
+    ns1:isPunishedBy ns1:Punishment_Restriction . 
+
+ns1:Punishment_Restriction a ns1:Punishment ;
+    ns1:hasText "Cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm." .
+
+
+
+ns1:Article166 a ns1:LegalProvision ;
+    ns1:hasText "Điều 166. Tội xâm phạm quyền khiếu nại, tố cáo" .
+
+ns1:Crime_InterferenceWithComplaints a ns1:Crime ;
+    ns1:definedIn ns1:Article166 ;
+    ns1:hasCondition ns1:Condition_ActsOfViolence ;
+    ns1:hasCondition ns1:Condition_AbuseOfPower ;
+    ns1:isPunishedBy ns1:Punishment_CommunityService ;
+    ns1:isPunishedBy ns1:Punishment_Prison .
+
+ns1:Condition_ActsOfViolence a ns1:Condition ;
+    ns1:hasText "Dùng vũ lực, đe dọa dùng vũ lực hoặc hành vi khác cản trở việc khiếu nại, tố cáo." .
+
+ns1:Condition_AbuseOfPower a ns1:Condition ;
+    ns1:hasText "Lợi dụng chức vụ, quyền hạn cản trở việc thi hành quyết định của cơ quan có thẩm quyền." .
+
+ns1:Punishment_CommunityService a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm." .
+
+ns1:Punishment_Prison a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 06 tháng đến 03 năm." .
+
+ns1:Condition_OrganizedCrime a ns1:Condition ;
+    ns1:hasText "Có tổ chức." .
+
+ns1:Condition_Retaliation a ns1:Condition ;
+    ns1:hasText "Trả thù người khiếu nại, tố cáo." .
+
+ns1:Condition_AbuseOfPowerAgain a ns1:Condition ;
+    ns1:hasText "Lợi dụng chức vụ, quyền hạn thực hiện hành vi quy định tại điểm a khoản 1 Điều này." .
+
+ns1:Condition_LeadsToProtests a ns1:Condition ;
+    ns1:hasText "Dẫn đến biểu tình." .
+
+ns1:Condition_Suicide a ns1:Condition ;
+    ns1:hasText "Làm người khiếu nại, tố cáo tự sát." .
+
+ns1:Punishment_PrisonExtended a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 02 năm đến 07 năm." .
+
+ns1:Punishment_Prohibition a ns1:Punishment ;
+    ns1:hasText "Bị cấm đảm nhiệm chức vụ nhất định từ 01 năm đến 05 năm." .
+
+
+
+ns1:Article167 a ns1:LegalProvision ;
+    ns1:hasText "Điều 167. Tội xâm phạm quyền tự do ngôn luận, tự do báo chí, tiếp cận thông tin, quyền biểu tình của công dân" .
+
+ns1:Crime_InterferenceWithFreedomOfSpeech a ns1:Crime ;
+    ns1:definedIn ns1:Article167 ;
+    ns1:hasCondition ns1:Condition_UseOfForce ;
+    ns1:isPunishedBy ns1:Punishment_CommunityServiceOrImprisonment .
+
+ns1:Condition_UseOfForce a ns1:Condition ;
+    ns1:hasText "Người nào dùng vũ lực, đe dọa dùng vũ lực hoặc thủ đoạn khác cản trở công dân thực hiện quyền tự do ngôn luận, tự do báo chí, tiếp cận thông tin, quyền biểu tình của công dân" .
+
+ns1:Punishment_CommunityServiceOrImprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm" .
+
+ns1:Crime_SevereOffense a ns1:Crime ;
+    ns1:definedIn ns1:Article167 ;
+    ns1:hasCondition ns1:Condition_SevereCircumstances ;
+    ns1:isPunishedBy ns1:Punishment_Imprisonment .
+
+ns1:Condition_SevereCircumstances a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp: Có tổ chức; Lợi dụng chức vụ, quyền hạn; Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội" .
+
+ns1:Punishment_Imprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 05 năm" .
+
+ns1:Crime_BanFromPosition a ns1:Crime ;
+    ns1:definedIn ns1:Article167 ;
+    ns1:isPunishedBy ns1:Punishment_BanFromPosition .
+
+ns1:Punishment_BanFromPosition a ns1:Punishment ;
+    ns1:hasText "Bị cấm đảm nhiệm chức vụ từ 01 năm đến 05 năm" .
+
+
+
+ns1:Article169 a ns1:LegalProvision ;
+    ns1:hasText "Điều 169. Tội bắt cóc nhằm chiếm đoạt tài sản" .
+
+ns1:Crime_BatKoc a ns1:Crime ;
+    ns1:definedIn ns1:Article169 ;
+    ns1:hasCondition ns1:Condition_1 ;
+    ns1:hasCondition ns1:Condition_2 ; 
+    ns1:hasCondition ns1:Condition_3 ; 
+    ns1:hasCondition ns1:Condition_4 ; 
+    ns1:hasCondition ns1:Condition_5 ; 
+    ns1:hasCondition ns1:Condition_6 ;
+    ns1:isPunishedBy ns1:Punishment_1 ; 
+    ns1:isPunishedBy ns1:Punishment_2 ; 
+    ns1:isPunishedBy ns1:Punishment_3 ; 
+    ns1:isPunishedBy ns1:Punishment_4 ; 
+    ns1:isPunishedBy ns1:Punishment_5 ; 
+    ns1:isPunishedBy ns1:Punishment_6 .
+
+ns1:Condition_1 a ns1:Condition ;
+    ns1:hasText "Có tổ chức" .
+
+ns1:Condition_2 a ns1:Condition ;
+    ns1:hasText "Có tính chất chuyên nghiệp" .
+
+ns1:Condition_3 a ns1:Condition ;
+    ns1:hasText "Dùng vũ khí, phương tiện hoặc thủ đoạn nguy hiểm khác" .
+
+ns1:Condition_4 a ns1:Condition ;
+    ns1:hasText "Đối với người dưới 16 tuổi" .
+
+ns1:Condition_5 a ns1:Condition ;
+    ns1:hasText "Đối với 02 người trở lên" .
+
+ns1:Condition_6 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng" .
+
+ns1:Punishment_1 a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 02 năm đến 07 năm" .
+
+ns1:Punishment_2 a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 05 năm đến 12 năm" .
+
+ns1:Punishment_3 a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 10 năm đến 18 năm" .
+
+ns1:Punishment_4 a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 15 năm đến 20 năm hoặc tù chung thân" .
+
+ns1:Punishment_5 a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 05 năm" .
+
+ns1:Punishment_6 a ns1:Punishment ;
+    ns1:hasText "Phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, phạt quản chế, cấm cư trú từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản" .
+
+
+
+ns1:Article170 a ns1:LegalProvision ;
+    ns1:hasText "Điều 170. Tội cưỡng đoạt tài sản" .
+
+ns1:Crime_ForcedAssetAcquisition a ns1:Crime ;
+    ns1:definedIn ns1:Article170 ;
+    ns1:hasCondition ns1:Condition_ThreatOfViolence ;
+    ns1:isPunishedBy ns1:Punishment_1To5Years .
+
+ns1:Condition_ThreatOfViolence a ns1:Condition ;
+    ns1:hasText "Người nào đe dọa sẽ dùng vũ lực hoặc có thủ đoạn khác uy hiếp tinh thần người khác nhằm chiếm đoạt tài sản" .
+
+ns1:Punishment_1To5Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 05 năm" .
+
+ns1:Condition_OrganizedCrime a ns1:Condition ;
+    ns1:hasText "Có tổ chức" .
+
+ns1:Condition_ProfessionalCrime a ns1:Condition ;
+    ns1:hasText "Có tính chất chuyên nghiệp" .
+
+ns1:Condition_VulnerableVictim a ns1:Condition ;
+    ns1:hasText "Phạm tội đối với người dưới 16 tuổi, phụ nữ mà biết là có thai, người già yếu hoặc người không có khả năng tự vệ" .
+
+ns1:Condition_Value50To200Million a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng" .
+
+ns1:Condition_NegativeImpact a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội" .
+
+ns1:Condition_DangerousRecidivism a ns1:Condition ;
+    ns1:hasText "Tái phạm nguy hiểm" .
+
+ns1:Punishment_3To10Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 03 năm đến 10 năm" .
+
+ns1:Condition_Value200To500Million a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng" .
+
+ns1:Condition_ExploitingDisaster a ns1:Condition ;
+    ns1:hasText "Lợi dụng thiên tai, dịch bệnh" .
+
+ns1:Punishment_7To15Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 07 năm đến 15 năm" .
+
+ns1:Punishment_12To20Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 12 năm đến 20 năm" .
+
+ns1:Condition_Value500MillionAndAbove a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên" .
+
+ns1:Condition_ExploitingWar a ns1:Condition ;
+    ns1:hasText "Lợi dụng hoàn cảnh chiến tranh, tình trạng khẩn cấp" .
+
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_OrganizedCrime . 
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_ProfessionalCrime .
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_VulnerableVictim .
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_Value50To200Million .
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_NegativeImpact . 
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_DangerousRecidivism .
+ns1:Crime_ForcedAssetAcquisition ns1:isPunishedBy ns1:Punishment_3To10Years .
+
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_Value200To500Million .
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_ExploitingDisaster .
+ns1:Crime_ForcedAssetAcquisition ns1:isPunishedBy ns1:Punishment_7To15Years .
+
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_Value500MillionAndAbove .
+ns1:Crime_ForcedAssetAcquisition ns1:hasCondition ns1:Condition_ExploitingWar .
+ns1:Crime_ForcedAssetAcquisition ns1:isPunishedBy ns1:Punishment_12To20Years .
+
+
+
+ns1:Article171 a ns1:LegalProvision ;
+    ns1:hasText "Điều 171. Tội cướp giật tài sản" .
+
+ns1:Crime_Robbery a ns1:Crime ;
+    ns1:definedIn ns1:Article171 ;
+    ns1:hasCondition ns1:Condition_Organized ;
+    ns1:hasCondition ns1:Condition_Professional ;
+    ns1:hasCondition ns1:Condition_Value50to200 ;
+    ns1:hasCondition ns1:Condition_DangerousMethod ;
+    ns1:hasCondition ns1:Condition_AssaultEscape ;
+    ns1:hasCondition ns1:Condition_Injury11to30 ;
+    ns1:hasCondition ns1:Condition_VulnerableVictim ;
+    ns1:hasCondition ns1:Condition_NegativeImpact ;
+    ns1:hasCondition ns1:Condition_Reoffending ;
+    ns1:isPunishedBy ns1:Punishment_1to5Years .
+
+ns1:Condition_Organized a ns1:Condition .
+ns1:Condition_Professional a ns1:Condition .
+ns1:Condition_Value50to200 a ns1:Condition .
+ns1:Condition_DangerousMethod a ns1:Condition .
+ns1:Condition_AssaultEscape a ns1:Condition .
+ns1:Condition_Injury11to30 a ns1:Condition .
+ns1:Condition_VulnerableVictim a ns1:Condition .
+ns1:Condition_NegativeImpact a ns1:Condition .
+ns1:Condition_Reoffending a ns1:Condition .
+
+ns1:Punishment_1to5Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 01 năm đến 05 năm" .
+
+ns1:Crime_Robbery_Severe a ns1:Crime ;
+    ns1:definedIn ns1:Article171 ;
+    ns1:hasCondition ns1:Condition_Value200to500 ;
+    ns1:hasCondition ns1:Condition_Injury31to60 ;
+    ns1:hasCondition ns1:Condition_NaturalDisaster ;
+    ns1:isPunishedBy ns1:Punishment_7to15Years .
+
+ns1:Condition_Value200to500 a ns1:Condition .
+ns1:Condition_Injury31to60 a ns1:Condition .
+ns1:Condition_NaturalDisaster a ns1:Condition .
+
+ns1:Punishment_7to15Years a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 07 năm đến 15 năm" .
+
+ns1:Crime_Robbery_Severe2 a ns1:Crime ;
+    ns1:definedIn ns1:Article171 ;
+    ns1:hasCondition ns1:Condition_Value500OrMore ;
+    ns1:hasCondition ns1:Condition_Injury61OrMore ;
+    ns1:hasCondition ns1:Condition_Killing ;
+    ns1:hasCondition ns1:Condition_WarEmergency ;
+    ns1:isPunishedBy ns1:Punishment_12to20YearsOrLife .
+
+ns1:Condition_Value500OrMore a ns1:Condition .
+ns1:Condition_Injury61OrMore a ns1:Condition .
+ns1:Condition_Killing a ns1:Condition .
+ns1:Condition_WarEmergency a ns1:Condition .
+
+ns1:Punishment_12to20YearsOrLife a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 12 năm đến 20 năm hoặc tù chung thân" .
+
+ns1:Crime_Robbery_Fine a ns1:Crime ;
+    ns1:definedIn ns1:Article171 ;
+    ns1:isPunishedBy ns1:Punishment_Fine .
+
+ns1:Punishment_Fine a ns1:Punishment ;
+    ns1:hasText "Có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng" .
+
+
+
+ns1:Article172 a ns1:LegalProvision ;
+    ns1:hasText "Điều 172. Tội công nhiên chiếm đoạt tài sản" .
+
+ns1:Crime_PubliclyAppropriatingProperty a ns1:Crime ;
+    ns1:definedIn ns1:Article172 ;
+    ns1:hasCondition ns1:Condition_Valuation2000000To50000000 ;
+    ns1:isPunishedBy ns1:Punishment_ReformWithoutDetention .
+
+ns1:Condition_Valuation2000000To50000000 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng" .
+
+ns1:Punishment_ReformWithoutDetention a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm" .
+
+ns1:Condition_PreviousAdministrativePenalty a ns1:Condition ;
+    ns1:hasText "Đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt tài sản mà còn vi phạm" .
+
+ns1:Condition_PreviousConviction a ns1:Condition ;
+    ns1:hasText "Đã bị kết án về tội này hoặc về một trong các tội quy định tại các điều 168, 169, 170, 171, 173, 174, 175 và 290 của Bộ luật này, chưa được xóa án tích mà còn vi phạm" .
+
+ns1:Condition_NegativeImpact a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội" .
+
+ns1:Condition_LivingMeans a ns1:Condition ;
+    ns1:hasText "Tài sản là phương tiện kiếm sống chính của người bị hại và gia đình họ; tài sản là kỷ vật, di vật, đồ thờ cúng có giá trị đặc biệt về mặt tinh thần đối với người bị hại" .
+
+ns1:Condition_Valuation50000000To200000000 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng" .
+
+ns1:Punishment_Prison2To7Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 02 năm đến 07 năm" .
+
+ns1:Condition_DangerousRecidivism a ns1:Condition ;
+    ns1:hasText "Tái phạm nguy hiểm" .
+
+ns1:Condition_AidProperty a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản là hàng cứu trợ" .
+
+ns1:Condition_Valuation200000000To500000000 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng" .
+
+ns1:Punishment_Prison7To15Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 07 năm đến 15 năm" .
+
+ns1:Condition_ExploitingDisaster a ns1:Condition ;
+    ns1:hasText "Lợi dụng thiên tai, dịch bệnh" .
+
+ns1:Punishment_Prison12To20Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 12 năm đến 20 năm" .
+
+ns1:Condition_Valuation500000000OrMore a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên" .
+
+ns1:Condition_ExploitingWar a ns1:Condition ;
+    ns1:hasText "Lợi dụng hoàn cảnh chiến tranh, tình trạng khẩn cấp" .
+
+ns1:Condition_Valuation200000000To500000000 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng" .
+
+
+
+ns1:Article173 a ns1:LegalProvision ;
+    ns1:hasText "Điều 173. Tội trộm cắp tài sản" .
+
+ns1:Crime_Theft a ns1:Crime ;
+    ns1:definedIn ns1:Article173 ;
+    ns1:hasCondition ns1:Condition_ValueUnder50M ;
+    ns1:isPunishedBy ns1:Punishment_UpTo3Years .
+
+ns1:Condition_ValueUnder50M a ns1:Condition ;
+    ns1:hasText "Trộm cắp tài sản trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng" .
+
+ns1:Punishment_UpTo3Years a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm" .
+
+ns1:Condition_RepeatOffender a ns1:Condition ;
+    ns1:hasText "Đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt tài sản mà còn vi phạm" .
+
+ns1:Condition_PreviousConviction a ns1:Condition ;
+    ns1:hasText "Đã bị kết án về tội này hoặc về một trong các tội quy định tại các điều 168, 169, 170, 171, 172, 174, 175 và 290 của Bộ luật này, chưa được xóa án tích mà còn vi phạm" .
+
+ns1:Condition_NegativeImpact a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội" .
+
+ns1:Condition_LivingEssentials a ns1:Condition ;
+    ns1:hasText "Tài sản là phương tiện kiếm sống chính của người bị hại và gia đình họ; tài sản là kỷ vật, di vật, đồ thờ cúng có giá trị đặc biệt về mặt tinh thần đối với người bị hại" .
+
+ns1:Crime_Theft_Severe a ns1:Crime ;
+    ns1:definedIn ns1:Article173 ;
+    ns1:hasCondition ns1:Condition_Severe ;
+    ns1:isPunishedBy ns1:Punishment_2To7Years .
+
+ns1:Condition_Severe a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp như có tổ chức, có tính chất chuyên nghiệp, chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng, dùng thủ đoạn xảo quyệt, hành hung để tẩu thoát, tái phạm nguy hiểm" .
+
+ns1:Punishment_2To7Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 02 năm đến 07 năm" .
+
+ns1:Crime_Theft_VerySevere a ns1:Crime ;
+    ns1:definedIn ns1:Article173 ;
+    ns1:hasCondition ns1:Condition_VerySevere ;
+    ns1:isPunishedBy ns1:Punishment_7To15Years .
+
+ns1:Condition_VerySevere a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp như chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng, trộm cắp tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, c và d khoản 1 Điều này, lợi dụng thiên tai, dịch bệnh" .
+
+ns1:Punishment_7To15Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 07 năm đến 15 năm" .
+
+ns1:Crime_Theft_SeverePunishment a ns1:Crime ;
+    ns1:definedIn ns1:Article173 ;
+    ns1:hasCondition ns1:Condition_SeverePunishment ;
+    ns1:isPunishedBy ns1:Punishment_12To20Years .
+
+ns1:Condition_SeverePunishment a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp như chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên, trộm cắp tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, c và d khoản 1 Điều này, lợi dụng hoàn cảnh chiến tranh, tình trạng khẩn cấp" .
+
+ns1:Punishment_12To20Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 12 năm đến 20 năm" . 
+
+ns1:Crime_Theft_Fine a ns1:Crime ;
+    ns1:definedIn ns1:Article173 ;
+    ns1:isPunishedBy ns1:Punishment_Fine .
+
+ns1:Punishment_Fine a ns1:Punishment ;
+    ns1:hasText "Phạt tiền từ 5.000.000 đồng đến 50.000.000 đồng" .
+
+
+
+ns1:Article174 a ns1:LegalProvision ;
+    ns1:hasText "Điều 174. Tội lừa đảo chiếm đoạt tài sản" .
+
+ns1:Crime_FraudulentAssetSeizure a ns1:Crime ;
+    ns1:definedIn ns1:Article174 ;
+    ns1:hasCondition ns1:Condition_Condition1 ;
+    ns1:isPunishedBy ns1:Punishment_Penalty1 .
+
+ns1:Condition_Condition1 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 2.000.000 đồng nhưng thuộc một trong các trường hợp sau đây" .
+
+ns1:Punishment_Penalty1 a ns1:Punishment ;
+    ns1:hasText "Bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm" .
+
+ns1:Condition_Condition2 a ns1:Condition ;
+    ns1:hasText "Đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt tài sản mà còn vi phạm" .
+
+ns1:Condition_Condition3 a ns1:Condition ;
+    ns1:hasText "Đã bị kết án về tội này hoặc về một trong các tội quy định tại các điều 168, 169, 170, 171, 172, 173, 175 và 290 của Bộ luật này, chưa được xóa án tích mà còn vi phạm" .
+
+ns1:Condition_Condition4 a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội" .
+
+ns1:Condition_Condition5 a ns1:Condition ;
+    ns1:hasText "Tài sản là phương tiện kiếm sống chính của người bị hại và gia đình họ; tài sản là kỷ vật, di vật, đồ thờ cúng có giá trị đặc biệt về mặt tinh thần đối với người bị hại" .
+
+ns1:Condition_Condition6 a ns1:Condition ;
+    ns1:hasText "Có tổ chức" .
+
+ns1:Condition_Condition7 a ns1:Condition ;
+    ns1:hasText "Có tính chất chuyên nghiệp" .
+
+ns1:Condition_Condition8 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng" .
+
+ns1:Condition_Condition9 a ns1:Condition ;
+    ns1:hasText "Tái phạm nguy hiểm" .
+
+ns1:Condition_Condition10 a ns1:Condition ;
+    ns1:hasText "Lợi dụng chức vụ, quyền hạn hoặc lợi dụng danh nghĩa cơ quan, tổ chức" .
+
+ns1:Condition_Condition11 a ns1:Condition ;
+    ns1:hasText "Dùng thủ đoạn xảo quyệt" .
+
+ns1:Condition_Condition12 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, c và d khoản 1 Điều này" .
+
+ns1:Punishment_Penalty2 a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 02 năm đến 07 năm" .
+
+ns1:Punishment_Penalty3 a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 07 năm đến 15 năm" .
+
+ns1:Punishment_Penalty4 a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 12 năm đến 20 năm hoặc tù chung thân" .
+
+ns1:Condition_Condition13 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng" .
+
+ns1:Condition_Condition14 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, c và d khoản 1 Điều này" .
+
+ns1:Condition_Condition15 a ns1:Condition ;
+    ns1:hasText "Lợi dụng thiên tai, dịch bệnh" .
+
+ns1:Condition_Condition16 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên" .
+
+ns1:Condition_Condition17 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, c và d khoản 1 Điều này" .
+
+ns1:Condition_Condition18 a ns1:Condition ;
+    ns1:hasText "Lợi dụng hoàn cảnh chiến tranh, tình trạng khẩn cấp" .
+
+ns1:Punishment_Penalty5 a ns1:Punishment ;
+    ns1:hasText "Có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản" .
+
+
+
+ns1:Article175 a ns1:LegalProvision ;
+    ns1:hasText "Điều 175. Tội lạm dụng tín nhiệm chiếm đoạt tài sản" .
+
+ns1:Crime_AbuseOfTrust a ns1:Crime ;
+    ns1:definedIn ns1:Article175 ;
+    ns1:hasCondition ns1:Condition_Condition1 ;
+    ns1:isPunishedBy ns1:Punishment_Punishment1 .
+
+ns1:Condition_Condition1 a ns1:Condition ;
+    ns1:hasText "Chiếm đoạt tài sản trị giá từ 4.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 4.000.000 đồng nhưng đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt hoặc đã bị kết án về tội này." .
+
+ns1:Punishment_Punishment1 a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm." .
+
+ns1:Crime_AbuseOfTrust_Condition2 a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm." .
+
+ns1:Crime_AbuseOfTrust_Condition3 a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 05 năm đến 12 năm." .
+
+ns1:Crime_AbuseOfTrust_Condition4 a ns1:Condition ;
+    ns1:hasText "Phạm tội chiếm đoạt tài sản trị giá 500.000.000 đồng trở lên, thì bị phạt tù từ 12 năm đến 20 năm." .
+
+ns1:Crime_AbuseOfTrust_Condition5 a ns1:Condition ;
+    ns1:hasText "Người phạm tội còn có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, bị cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản." .
+
+
+
+ns1:Article176 a ns1:LegalProvision ;
+    ns1:hasText "Điều 176. Tội chiếm giữ trái phép tài sản"^^xsd:string .
+
+ns1:Crime_IllegalPossession a ns1:Crime ;
+    ns1:definedIn ns1:Article176 ;
+    ns1:hasCondition ns1:Condition_IntentionalNonReturn ;
+    ns1:isPunishedBy ns1:Punishment_FineAndImprisonment .
+
+ns1:Condition_IntentionalNonReturn a ns1:Condition ;
+    ns1:hasText "Cố tình không trả lại tài sản cho chủ sở hữu hoặc không giao nộp cho cơ quan có trách nhiệm"^^xsd:string .
+
+ns1:Punishment_FineAndImprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng, phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm"^^xsd:string .
+
+ns1:Punishment_SevereImprisonment a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 05 năm"^^xsd:string .
+
+ns1:Crime_SevereIllegalPossession a ns1:Crime ;
+    ns1:definedIn ns1:Article176 ;
+    ns1:hasCondition ns1:Condition_Severe ;
+    ns1:isPunishedBy ns1:Punishment_SevereImprisonment .
+
+ns1:Condition_Severe a ns1:Condition ;
+    ns1:hasText "Chiếm giữ tài sản trị giá 200.000.000 đồng trở lên hoặc bảo vật quốc gia"^^xsd:string .
+
+
+
+ns1:Article177 a ns1:LegalProvision ;
+    ns1:hasText "Điều 177. Tội sử dụng trái phép tài sản"^^xsd:string .
+
+ns1:Crime_IllegalUseOfProperty a ns1:Crime ;
+    ns1:definedIn ns1:Article177 ;
+    ns1:hasCondition ns1:Condition_UseForProfit ;
+    ns1:isPunishedBy ns1:Punishment_FineAndImprisonment .
+
+ns1:Condition_UseForProfit a ns1:Condition ;
+    ns1:hasText "Người nào vì vụ lợi mà sử dụng trái phép tài sản của người khác trị giá từ 100.000.000 đồng đến dưới 500.000.000 đồng, đã bị xử lý kỷ luật, xử phạt vi phạm hành chính về hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm hoặc tài sản là di vật, cổ vật hoặc vật có giá trị lịch sử, văn hóa nếu không thuộc trường hợp quy định tại Điều 220 của Bộ luật này."^^xsd:string .
+
+ns1:Punishment_FineAndImprisonment a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng, phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm."^^xsd:string .
+
+ns1:Condition_SevereCases a ns1:Condition ;
+    ns1:hasText "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 50.000.000 đồng đến 100.000.000 đồng hoặc phạt tù từ 01 năm đến 05 năm: a) Tài sản trị giá từ 500.000.000 đồng đến dưới 1.500.000.000 đồng; b) Tài sản là bảo vật quốc gia; c) Phạm tội 02 lần trở lên; d) Lợi dụng chức vụ, quyền hạn; đ) Tái phạm nguy hiểm."^^xsd:string .
+
+ns1:Punishment_SevereCases a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 50.000.000 đồng đến 100.000.000 đồng hoặc phạt tù từ 01 năm đến 05 năm."^^xsd:string .
+
+ns1:Condition_SevereOffense a ns1:Condition ;
+    ns1:hasText "Phạm tội sử dụng trái phép tài sản trị giá 1.500.000.000 đồng trở lên."^^xsd:string .
+
+ns1:Punishment_SevereOffense a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 03 năm đến 07 năm."^^xsd:string .
+
+ns1:Condition_AdditionalPenalties a ns1:Condition ;
+    ns1:hasText "Người phạm tội còn có thể bị phạt tiền từ 5.000.000 đồng đến 20.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm."^^xsd:string .
+
+ns1:Punishment_AdditionalPenalties a ns1:Punishment ;
+    ns1:hasText "Phạt tiền từ 5.000.000 đồng đến 20.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm."^^xsd:string .
+
+
+
+ns1:Article178 a ns1:LegalProvision ;
+    ns1:hasText "Điều 178. Tội hủy hoại hoặc cố ý làm hư hỏng tài sản" .
+
+ns1:Crime_DamageProperty a ns1:Crime ;
+    ns1:definedIn ns1:Article178 ;
+    ns1:hasCondition ns1:Condition_ViolatingAdministrative ;
+    ns1:hasCondition ns1:Condition_PreviousConviction ;
+    ns1:hasCondition ns1:Condition_NegativeImpact ;
+    ns1:hasCondition ns1:Condition_LivingAsset ;
+    ns1:isPunishedBy ns1:Punishment_Fine_10M_to_50M ;
+    ns1:isPunishedBy ns1:Punishment_Imprisonment_6M_to_3Y .
+
+ns1:Condition_ViolatingAdministrative a ns1:Condition ;
+    ns1:hasText "Đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt tài sản mà còn vi phạm." .
+
+ns1:Condition_PreviousConviction a ns1:Condition ;
+    ns1:hasText "Đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm." .
+
+ns1:Condition_NegativeImpact a ns1:Condition ;
+    ns1:hasText "Gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội." .
+
+ns1:Condition_LivingAsset a ns1:Condition ;
+    ns1:hasText "Tài sản là phương tiện kiếm sống chính của người bị hại và gia đình họ; tài sản là kỷ vật, di vật, đồ thờ cúng có giá trị đặc biệt về mặt tinh thần đối với người bị hại." .
+
+ns1:Punishment_Fine_10M_to_50M a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng." .
+
+ns1:Punishment_Imprisonment_6M_to_3Y a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 06 tháng đến 03 năm." .
+
+ns1:Condition_OrganizedCrime a ns1:Condition ;
+    ns1:hasText "Có tổ chức." .
+
+ns1:Condition_HighDamage a ns1:Condition ;
+    ns1:hasText "Gây thiệt hại cho tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng." .
+
+ns1:Condition_NationalTreasure a ns1:Condition ;
+    ns1:hasText "Gây thiệt hại tài sản là bảo vật quốc gia." .
+
+ns1:Condition_DangerousSubstance a ns1:Condition ;
+    ns1:hasText "Dùng chất nguy hiểm về cháy, nổ hoặc thủ đoạn nguy hiểm khác." .
+
+ns1:Condition_HidingCrime a ns1:Condition ;
+    ns1:hasText "Để che giấu tội phạm khác." .
+
+ns1:Condition_PublicService a ns1:Condition ;
+    ns1:hasText "Vì lý do công vụ của người bị hại." .
+
+ns1:Condition_Reoffending a ns1:Condition ;
+    ns1:hasText "Tái phạm nguy hiểm." .
+
+ns1:Punishment_Imprisonment_2Y_to_7Y a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 02 năm đến 07 năm." .
+
+ns1:Punishment_Imprisonment_5Y_to_10Y a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 05 năm đến 10 năm." .
+
+ns1:Punishment_Imprisonment_10Y_to_20Y a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 10 năm đến 20 năm." .
+
+ns1:Punishment_Fine_10M_to_100M a ns1:Punishment ;
+    ns1:hasText "Bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng." .
+
+
+
+ns1:Article179 a ns1:LegalProvision ;
+    ns1:hasText "Điều 179. Tội thiếu trách nhiệm gây thiệt hại đến tài sản của Nhà nước, cơ quan, tổ chức, doanh nghiệp" .
+
+ns1:Crime_NegligenceDamage a ns1:Crime ;
+    ns1:definedIn ns1:Article179 .
+ns1:Crime_NegligenceDamage ns1:hasCondition ns1:Condition_Under100M .
+ns1:Crime_NegligenceDamage ns1:hasCondition ns1:Condition_500MTo2B .
+ns1:Crime_NegligenceDamage ns1:hasCondition ns1:Condition_Over2B .
+ns1:Crime_NegligenceDamage ns1:isPunishedBy ns1:Punishment_Warning .
+ns1:Crime_NegligenceDamage ns1:isPunishedBy ns1:Punishment_CommunityService .
+ns1:Crime_NegligenceDamage ns1:isPunishedBy ns1:Punishment_Prison1To5Years .
+ns1:Crime_NegligenceDamage ns1:isPunishedBy ns1:Punishment_Prison5To10Years .
+ns1:Crime_NegligenceDamage ns1:isPunishedBy ns1:Punishment_JobBan .
+
+ns1:Condition_Under100M a ns1:Condition ;
+    ns1:hasText "Thiệt hại từ 100.000.000 đồng đến dưới 500.000.000 đồng" .
+
+ns1:Condition_500MTo2B a ns1:Condition ;
+    ns1:hasText "Thiệt hại từ 500.000.000 đồng đến dưới 2.000.000.000 đồng" .
+
+ns1:Condition_Over2B a ns1:Condition ;
+    ns1:hasText "Thiệt hại 2.000.000.000 đồng trở lên" .
+
+ns1:Punishment_Warning a ns1:Punishment ;
+    ns1:hasText "Phạt cảnh cáo" .
+
+ns1:Punishment_CommunityService a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 03 năm" .
+
+ns1:Punishment_Prison1To5Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 01 năm đến 05 năm" .
+
+ns1:Punishment_Prison5To10Years a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 05 năm đến 10 năm" .
+
+ns1:Punishment_JobBan a ns1:Punishment ;
+    ns1:hasText "Cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm" .
+
+
+
+ns1:Article180 a ns1:LegalProvision ;
+    ns1:hasText "Điều 180. Tội vô ý gây thiệt hại nghiêm trọng đến tài sản"^^xsd:string .
+
+ns1:Crime_VoI_GayThietHai a ns1:Crime ;
+    ns1:definedIn ns1:Article180 .
+ns1:Crime_VoI_GayThietHa ns1:hasCondition ns1:Condition_VoI_GayThietHai1 .
+ns1:Crime_VoI_GayThietHa ns1:hasCondition ns1:Condition_VoI_GayThietHai2 .
+ns1:Crime_VoI_GayThietHa ns1:isPunishedBy ns1:Punishment_CanhCao . 
+ns1:Crime_VoI_GayThietHa ns1:isPunishedBy ns1:Punishment_CaiTao .
+
+ns1:Condition_VoI_GayThietHai1 a ns1:Condition ;
+    ns1:hasText "Người nào vô ý gây thiệt hại cho tài sản của người khác trị giá từ 100.000.000 đồng đến dưới 500.000.000 đồng"^^xsd:string .
+
+ns1:Condition_VoI_GayThietHai2 a ns1:Condition ;
+    ns1:hasText "Phạm tội gây thiệt hại cho tài sản của người khác trị giá 500.000.000 đồng trở lên"^^xsd:string .
+
+ns1:Punishment_CanhCao a ns1:Punishment ;
+    ns1:hasText "Bị phạt cảnh cáo"^^xsd:string .
+
+ns1:Punishment_CaiTao a ns1:Punishment ;
+    ns1:hasText "Bị phạt cải tạo không giam giữ đến 02 năm"^^xsd:string .
+
+ns1:Punishment_Tu a ns1:Punishment ;
+    ns1:hasText "Bị phạt tù từ 03 tháng đến 02 năm"^^xsd:string .
+
+
+
+ns1:Article181 a ns1:LegalProvision ;
+    ns1:hasText "Điều 181. Tội cưỡng ép kết hôn, ly hôn hoặc cản trở hôn nhân tự nguyện, tiến bộ, cản trở ly hôn tự nguyện. Người nào cưỡng ép người khác kết hôn trái với sự tự nguyện của họ, cản trở người khác kết hôn hoặc duy trì quan hệ hôn nhân tự nguyện, tiến bộ hoặc cưỡng ép hoặc cản trở người khác ly hôn bằng cách hành hạ, ngược đãi, uy hiếp tinh thần, yêu sách của cải hoặc bằng thủ đoạn khác, đã bị xử phạt vi phạm hành chính về hành vi này mà còn vi phạm, thì bị phạt cảnh cáo, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 03 tháng đến 03 năm."^^xsd:string .
+
+ns1:Crime_CoercionMarriage a ns1:Crime ;
+    ns1:definedIn ns1:Article181 ;
+    ns1:hasCondition ns1:Condition_ViolatingConsent ;
+    ns1:isPunishedBy ns1:Punishment_AdministrativeWarning .
+
+ns1:Condition_ViolatingConsent a ns1:Condition .
+
+ns1:Punishment_AdministrativeWarning a ns1:Punishment ;
+    ns1:hasText "Phạt cảnh cáo, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 03 tháng đến 03 năm."^^xsd:string .
+
+
+
+ns1:Article182 a ns1:LegalProvision ;
+    ns1:hasText "Điều 182. Tội vi phạm chế độ một vợ, một chồng" .
+
+ns1:Crime_ViPhamCheDoMotVoMotChong a ns1:Crime ;
+    ns1:definedIn ns1:Article182 ;
+    ns1:hasCondition ns1:Condition_LyHon ;
+    ns1:isPunishedBy ns1:Punishment_CanhCao ;
+    ns1:isPunishedBy ns1:Punishment_CaiTao ;
+    ns1:isPunishedBy ns1:Punishment_Tu .
+
+ns1:Condition_LyHon a ns1:Condition ;
+    ns1:hasText "Làm cho quan hệ hôn nhân của một hoặc hai bên dẫn đến ly hôn" .
+
+ns1:Punishment_CanhCao a ns1:Punishment ;
+    ns1:hasText "Phạt cảnh cáo" .
+
+ns1:Punishment_CaiTao a ns1:Punishment ;
+    ns1:hasText "Phạt cải tạo không giam giữ đến 01 năm" .
+
+ns1:Punishment_Tu a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 03 tháng đến 01 năm" .
+
+ns1:Condition_TuSat a ns1:Condition ;
+    ns1:hasText "Làm cho vợ, chồng hoặc con của một trong hai bên tự sát" .
+
+ns1:Crime_TuSat a ns1:Crime ;
+    ns1:definedIn ns1:Article182 ;
+    ns1:hasCondition ns1:Condition_TuSat ;
+    ns1:isPunishedBy ns1:Punishment_TuNang .
+
+ns1:Punishment_TuNang a ns1:Punishment ;
+    ns1:hasText "Phạt tù từ 06 tháng đến 03 năm" .
+
+ns1:Condition_HuyKetHon a ns1:Condition ;
+    ns1:hasText "Đã có quyết định của Tòa án hủy việc kết hôn hoặc buộc phải chấm dứt việc chung sống như vợ chồng trái với chế độ một vợ, một chồng mà vẫn duy trì quan hệ đó" .
+
+ns1:Crime_HuyKetHon a ns1:Crime ;
+    ns1:definedIn ns1:Article182 ;
+    ns1:hasCondition ns1:Condition_HuyKetHon ;
+    ns1:isPunishedBy ns1:Punishment_TuNang .
+

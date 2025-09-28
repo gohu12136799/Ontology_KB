@@ -1,4 +1,6 @@
 # danh sách các điều luật, dùng để import vao file use_llm_to_fact.py
+law_13 = """ Điều 13. Phạm tội do dùng rượu, bia hoặc chất kích thích mạnh khác. 
+Người phạm tội trong tình trạng mất khả năng nhận thức hoặc khả năng điều khiển hành vi của mình do dùng rượu, bia hoặc chất kích thích mạnh khác, thì vẫn phải chịu trách nhiệm hình sự."""
 law_157 = """
 Điều 157. Tội bắt, giữ hoặc giam người trái pháp luật
 

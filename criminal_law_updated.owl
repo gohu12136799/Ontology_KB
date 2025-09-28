@@ -28,6 +28,16 @@
   <rdfs:range rdf:resource="#LegalProvision"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#appliesTo">
+  <rdfs:domain rdf:resource="#LegalProvision"/>
+  <rdfs:range rdf:resource="#Crime"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCondition">
+  <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:range rdf:resource="#Condition"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#judgedBy">
   <rdfs:domain rdf:resource="#Crime"/>
   <rdfs:range rdf:resource="#Court"/>
@@ -90,11 +100,11 @@
 
 <owl:DatatypeProperty rdf:about="#hasName">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Evidence"/>
-  <rdfs:domain rdf:resource="#Person"/>
   <rdfs:domain rdf:resource="#Court"/>
+  <rdfs:domain rdf:resource="#Person"/>
   <rdfs:domain rdf:resource="#LegalProvision"/>
   <rdfs:domain rdf:resource="#Crime"/>
+  <rdfs:domain rdf:resource="#Evidence"/>
   <rdfs:domain rdf:resource="#Trial"/>
   <rdfs:domain rdf:resource="#Location"/>
   <rdfs:domain rdf:resource="#Sentence"/>
@@ -248,6 +258,14 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Intent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Organized">
+  <rdfs:subClassOf rdf:resource="#Intent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Condition">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
