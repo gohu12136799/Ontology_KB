@@ -1,10 +1,10 @@
-# file lấy đoạn văn bản từ law_texts.py, gọi LLM để tạo triples RDF/OWL, và lưu vào file triples.ttl
+# file lấy đoạn văn bản từ list_list_law_texts.py, gọi LLM để tạo triples RDF/OWL, và lưu vào file triples.ttl
 
 import os
 from openai import OpenAI
 from owlready2 import get_ontology
 from dotenv import load_dotenv
-import law_texts  
+import list_law_texts  
 
 load_dotenv()
 
@@ -19,9 +19,9 @@ OUTPUT_FILE = "triples.ttl"
 if os.path.exists(OUTPUT_FILE):
     os.remove(OUTPUT_FILE)
 
-for attr in dir(law_texts):
+for attr in dir(list_law_texts):
     if attr.startswith("law_"):
-        law_text = getattr(law_texts, attr)  # lấy nội dung điều luật
+        law_text = getattr(list_law_texts, attr)  # lấy nội dung điều luật
 
         prompt = f"""
 Bạn là chuyên gia RDF/OWL. Tôi có ontology pháp luật với các class và property sau:
